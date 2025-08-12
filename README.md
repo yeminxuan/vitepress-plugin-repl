@@ -1,10 +1,10 @@
-# vite-plugin-repl
+# vitepress-plugin-repl
 
 
 ## install
 
 ```shell
-npm i vite-plugin-repl -D
+npm i vitepress-plugin-repl -D
 ```
 
 
@@ -13,7 +13,7 @@ npm i vite-plugin-repl -D
 
 ```js
 // config.ts
-import { VueReplMdPlugin } from 'vite-plugin-repl';
+import { VueReplMdPlugin } from 'vitepress-plugin-repl';
 
 export default defineConfig({
   markdown: {
@@ -27,7 +27,7 @@ export default defineConfig({
 
 ```js
 // theme/index.ts
-import Playground from 'vite-plugin-repl/components/index.vue'
+import Playground from 'vitepress-plugin-repl/components/index.vue'
 import DefaultTheme from 'vitepress/theme';
 
 export default {
