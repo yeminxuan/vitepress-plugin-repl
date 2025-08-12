@@ -1,5 +1,10 @@
 # vitepress-plugin-repl
 
+<p align="center">
+    <a href="https://www.npmjs.com/package/vitepress-plugin-repl" target="_black"><img src="https://img.shields.io/npm/v/vitepress-plugin-repl.svg"/></a> <a href="https://npmcharts.com/compare/vitepress-plugin-repl?minimal=true">
+    <img src="https://img.shields.io/npm/dm/vitepress-plugin-repl.svg" />
+  </a>
+</p>
 
 ## install
 
