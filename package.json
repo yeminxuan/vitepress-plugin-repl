@@ -1,10 +1,10 @@
 {
-  "name": "vitepress-plugin-vue-repl",
-  "version": "0.0.9",
-  "description": "In Vitepress use playground",
+  "name": "vite-plugin-repl",
+  "version": "0.0.1",
+  "description": "Vite use playground",
   "module": "./dist/index.js",
   "main": "./dist/index.js",
-  "homepage": "https://github.com/fyhhub/vitepress-plugin-vue-repl",
+  "homepage": "https://github.com/yeminxuan/vite-plugin-repl",
   "types": "./dist",
   "scripts": {
     "dev": "tsc --watch",
@@ -14,10 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vue/repl": "^2.5.8",
+    "@vue/repl": "4.6.3",
     "fflate": "^0.8.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-container": "^3.0.0"
+    "markdown-it-container": "4.0.0"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.1",
