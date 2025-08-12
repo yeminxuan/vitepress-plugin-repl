@@ -1,4 +1,4 @@
-# vitepress-plugin-vue-repl
+# vite-plugin-repl
 
 
 ## install
