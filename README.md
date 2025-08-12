@@ -39,7 +39,9 @@ export default {
 ```
 
 
-## Usage
+## Usage 
+
+### SFC Mode
 ````markdown
 
 ::: playground
@@ -57,6 +59,59 @@ export default {
 ```
 :::
 
+````
+
+### Multiple File Mode
+
+use `@file` prefix to define fileName, for example:
+
+````markdown
+::: playground
+
+@file Comp.vue
+
+```vue
+<template>
+  <div>test @file</div>
+  <button @click="clickAdd">Click me {{ count }}</button>
+  <ButtonVue :count="count"></ButtonVue>
+</template>
+<script setup>
+import ButtonVue from "./Button.vue";
+import { ref } from "vue";
+const count = ref(0);
+const clickAdd = () => {
+  count.value++;
+};
+</script>
+
+<style scoped>
+button {
+  color: red;
+}
+</style>
+```
+
+@file Button.vue
+
+```vue
+<script setup lang="ts">
+const props = defineProps({
+  count: {
+    type: Number,
+    default: 0,
+  },
+});
+</script>
+
+<template>
+  <div>
+    <button>display count {{ props.count }}</button>
+  </div>
+</template>
+```
+
+:::
 ````
 
 ## Code Editor Config
