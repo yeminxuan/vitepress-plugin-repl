@@ -1,28 +1,38 @@
 {
-  "name": "vite-plugin-repl",
+  "type": "module",
+  "name": "vitepress-plugin-repl",
   "version": "0.0.1",
-  "description": "Vite use playground",
+  "description": "Vitepress use playground, has react mode and vue mode",
   "module": "./dist/index.js",
   "main": "./dist/index.js",
   "homepage": "https://github.com/yeminxuan/vite-plugin-repl",
   "types": "./dist",
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc"
+    "build": "vue-tsc && vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vue/repl": "4.6.3",
     "fflate": "^0.8.0",
     "markdown-it": "^13.0.1",
     "markdown-it-container": "4.0.0"
   },
+  "peerDependencies": {
+    "vue": "3.5.13",
+    "@vue/repl": "4.6.3",
+    "vitepress": "1.6.3"
+  },
   "devDependencies": {
     "@types/markdown-it": "^13.0.1",
     "@types/markdown-it-container": "^2.0.6",
-    "typescript": "^5.2.2"
+    "@vitejs/plugin-vue": "^6.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^7.1.2",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vue-tsc": "^3.0.5"
   },
   "files": [
     "components",

@@ -2,8 +2,8 @@
  * @Author: 叶敏轩 mc20000406@163.com
  * @Date: 2025-08-11 23:43:49
  * @LastEditors: 叶敏轩 mc20000406@163.com
- * @LastEditTime: 2025-08-12 12:20:39
- * @FilePath: /vitepress-theme-teek-docs-template/plugins/vite-plugin-repl/node/index.ts
+ * @LastEditTime: 2025-08-12 17:31:00
+ * @FilePath: /vitepress-plugin-repl/node/index.ts
  * @Description:
  */
 import MarkdownItContainer from "markdown-it-container";
@@ -58,15 +58,11 @@ const playgroundRender: RenderRule = (tokens, idx) => {
   const editor = info.toLowerCase().includes("monaco") ? "Monaco" : "CodeMirror";
 
   const fileList = parsePlaygroundFiles(tokens, idx);
-  console.log(fileList);
-
   if (fileList.length > 0) {
     const config = fileList.find(f => f.fileName === "__setting.json")?.fileContent || "{}";
     const importMap = fileList.find(f => f.fileName === "__import_map.json")?.fileContent || "{}";
     const codeFiles = fileList.filter(f => !f.fileName.startsWith("__"));
     const encodeFiles = encodeURIComponent(JSON.stringify(codeFiles));
-    console.log("压缩后的数据", encodeFiles);
-    console.log("解压缩后的数据", JSON.parse(decodeURIComponent(encodeFiles)));
 
     if (tokens[idx].nesting === 1) {
       return `<VuePlayground
