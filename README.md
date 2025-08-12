@@ -40,18 +40,82 @@ export default {
 
 
 ## Usage
+````markdown
 
-![16940542830411694054282196.png](https://fastly.jsdelivr.net/gh/fyhhub/imgs@main/16940542830411694054282196.png)
+::: playground
+```vue
+<template>
+  <div>test</div>
+</template>
+<script setup lang="ts">
 
+</script>
+<style scoped>
 
-![16940543340541694054333997.png](https://fastly.jsdelivr.net/gh/fyhhub/imgs@main/16940543340541694054333997.png)
+</style>
+
+```
+:::
+
+````
+
 ## Code Editor Config
 
++ CodeMirror `default`
 + Monaco
-+ CodeMirror
++ Sanbox
 
-![16969186209081696918620011.png](https://fastly.jsdelivr.net/gh/fyhhub/imgs@main/16969186209081696918620011.png)
+因默认为 `CodeMirror` 下面给出的是 `Monaco Editor` 的案例：
 
+````markdown
+
+::: playground Monaco
+```vue
+<template>
+  <div>test</div>
+  <button @click="count += 1">{{ count }}</button>
+</template>
+<script setup lang="ts">
+const count = ref(1);
+</script>
+<style scoped>
+div {
+  color: red;
+}
+</style>
+
+```
+:::
+
+````
 
 ## Vue Repl Config & imports
-![16970099573521697009956483.png](https://fastly.jsdelivr.net/gh/fyhhub/imgs@main/16970099573521697009956483.png)
+
+````markdown
+
+::: playground Monaco
+```vue
+<template>
+  <div>test</div>
+  <button @click="count += 1">{{ count }}</button>
+</template>
+<script setup lang="ts">
+const count = ref(1);
+</script>
+<style scoped>
+div {
+  color: red;
+}
+</style>
+
+```
+```json
+{
+  "imports": {
+    "ant-design-vue": "xxx"
+  }
+}
+```
+:::
+
+````
