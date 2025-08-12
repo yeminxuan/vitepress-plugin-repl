@@ -125,7 +125,7 @@ const props = defineProps({
 + Monaco
 + Sanbox
 
-because this library playground extend field default is `CodeMirror` than this is `Monaco Editor` example：
+because this library playground extend field default is `CodeMirror`, here is an example of Monaco Editor
 
 ````markdown
 
