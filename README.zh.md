@@ -11,18 +11,18 @@
     <img alt="GitHub stars" src="https://img.shields.io/github/stars/yeminxuan/vitepress-plugin-repl?style=social">
     </a><br>
 
+  
 </p>
 
-turns fenced code block in your VitePress docs into a live, editable playground—no build step, just add `::: playground`
+在您的 VitePress 文档中，只需添加 `::: playground`，即可将带围栏的代码块转换为实时可编辑的代码编辑器，无需构建步骤。
 
-## 🚀 Features
+## 🚀 功能
+* [x] SFC 通过单独的 **```vue** 代码块定义单文件模式
+* [x] 使用 `@file 文件名` 紧跟文件的代码块
+* [x] use `@import` 紧跟一个自定义“导入映射”的 json 块
+* [x] use `@setting` 紧跟一个自定义设置的 json 块
 
-- [x] SFC Single-file playground via bare **```vue** blocks—drop code, run instantly.
-- [x] use `@file fileName` to add file
-- [x] use `@import` then a json block to customize "import map"
-- [x] use `@setting` then a json block to customize settings
-
-## 📦 Install
+## 📦 安装
 
 ```bash
 npm i vitepress-plugin-repl -D
@@ -34,7 +34,7 @@ yarn add vitepress-plugin-repl -D
 pnpm add vitepress-plugin-repl -D
 ```
 
-## 🦄 Usage
+## 🦄 使用
 
 ```js
 // config.ts
@@ -62,7 +62,7 @@ export default {
 };
 ```
 
-### SFC Mode
+### SFC 模式
 
 ````markdown
 ::: playground
@@ -78,9 +78,9 @@ export default {
 :::
 ````
 
-### Multiple File Mode
+### 多文件模式
 
-use `@file` prefix to define fileName, for example:
+使用 `@file` 前缀后面紧跟文件名, 例如：
 
 ````markdown
 ::: playground
@@ -131,7 +131,7 @@ const props = defineProps({
 :::
 ````
 
-## Code Editor Config
+## 编辑器配置
 
 - CodeMirror `default`
 - Monaco
@@ -160,7 +160,7 @@ div {
 :::
 ````
 
-## SFC Single Vue Config & Imports
+## SFC 单文件Vue配置 && 导入映射
 
 ````markdown
 ::: playground Monaco
@@ -193,13 +193,13 @@ div {
 
 :::
 ````
-## Contributors
+## 贡献者
 
-Thank you to everyone who contributed to this project.
+感谢为这个项目做出贡献的每一个人。
 <a href="https://github.com/yeminxuan/vitepress-plugin-repl/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=yeminxuan/vitepress-plugin-repl" />
 </a>
 
-## 📄 License
+## 📄 许可证
 
 <p dir="auto"><a href="/vitepress-plugin-repl/blob/main/LICENSE">MIT</a> License Copyright (c) 2025 yeminxuan <a href="https://github.com/yeminxuan">yeminxuan</a></p>
