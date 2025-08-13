@@ -1,6 +1,6 @@
 # vitepress-plugin-repl
 
-简体中文 | [English](README.en.md)
+简体中文 | [English](README.md)
 
 <p align="center">
     <a href="https://www.npmjs.com/package/vitepress-plugin-repl" target="_black">
