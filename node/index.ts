@@ -1,11 +1,3 @@
-/*
- * @Author: 叶敏轩 mc20000406@163.com
- * @Date: 2025-08-11 23:43:49
- * @LastEditors: 叶敏轩 mc20000406@163.com
- * @LastEditTime: 2025-08-12 17:31:00
- * @FilePath: /vitepress-plugin-repl/node/index.ts
- * @Description:
- */
 import MarkdownItContainer from "markdown-it-container";
 import type { RenderRule } from "markdown-it/lib/renderer";
 
@@ -33,7 +25,7 @@ function parsePlaygroundFiles(tokens: any[], idx: number) {
       if (inline?.content === `${AT_MARKER}import`) {
         const fence = tokens[i + 3];
         if (fence?.type === "fence") {
-          files.push({ fileName: "__import_map.json", fileContent: fence.content.trimEnd() });
+          files.push({ fileName: "import-map.json", fileContent: fence.content.trimEnd() });
         }
         i += 4;
         continue;
@@ -60,9 +52,9 @@ const playgroundRender: RenderRule = (tokens, idx) => {
   const fileList = parsePlaygroundFiles(tokens, idx);
   if (fileList.length > 0) {
     const config = fileList.find(f => f.fileName === "__setting.json")?.fileContent || "{}";
-    const importMap = fileList.find(f => f.fileName === "__import_map.json")?.fileContent || "{}";
+    // @vue/repl Render the Import Map by obtaining the file name of import-map.json, so the same name needs to be set here
+    const importMap = fileList.find(f => f.fileName === "import-map.json")?.fileContent || "{}";
     const codeFiles = fileList.filter(f => !f.fileName.startsWith("__"));
-    const encodeFiles = encodeURIComponent(JSON.stringify(codeFiles));
 
     if (tokens[idx].nesting === 1) {
       return `<VuePlayground

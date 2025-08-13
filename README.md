@@ -63,18 +63,53 @@ export default {
   },
 };
 ```
+### Edit Select
 
-### SFC Mode
+- CodeMirror `default`
+- Monaco
+- Sanbox
+
+because this library playground extend field default is `CodeMirror`, here is an example of Monaco Editor
+
+````markdown
+::: playground Monaco
+
+```vue
+<template>
+  <div>test</div>
+  <button @click="count += 1">{{ count }}</button>
+</template>
+<script setup lang="ts">
+const count = ref(1);
+</script>
+<style scoped>
+div {
+  color: red;
+}
+</style>
+```
+
+:::
+````
+### Single Vue File Mode
+
 
 ````markdown
 ::: playground
 
 ```vue
 <template>
-  <div>test</div>
+  <button @click="count += 1">Click me {{ count }}</button>
 </template>
-<script setup lang="ts"></script>
-<style scoped></style>
+<script setup lang="ts">
+import { ref } from "vue";
+const count = ref(0);
+</script>
+<style scoped>
+button {
+  color: green;
+}
+</style>
 ```
 
 :::
@@ -91,17 +126,13 @@ use `@file` prefix to define fileName, for example:
 
 ```vue
 <template>
-  <div>test @file</div>
-  <button @click="clickAdd">Click me {{ count }}</button>
+  <button @click="count += 1">Click me {{ count }}</button>
   <ButtonVue :count="count"></ButtonVue>
 </template>
 <script setup>
 import ButtonVue from "./Button.vue";
 import { ref } from "vue";
 const count = ref(0);
-const clickAdd = () => {
-  count.value++;
-};
 </script>
 
 <style scoped>
@@ -133,47 +164,23 @@ const props = defineProps({
 :::
 ````
 
-## Code Editor Config
+### Import Map And playground Components Config
 
-- CodeMirror `default`
-- Monaco
-- Sanbox
+#### Single File Mode
 
-because this library playground extend field default is `CodeMirror`, here is an example of Monaco Editor
+Just place the desired configuration directly in the json block
 
 ````markdown
 ::: playground Monaco
 
 ```vue
 <template>
-  <div>test</div>
-  <button @click="count += 1">{{ count }}</button>
+  <p>{{ width }} x {{ height }}</p>
 </template>
 <script setup lang="ts">
-const count = ref(1);
-</script>
-<style scoped>
-div {
-  color: red;
-}
-</style>
-```
+import { useWindowSize } from "@vueuse/core";
 
-:::
-````
-
-## SFC Single Vue Config & Imports
-
-````markdown
-::: playground Monaco
-
-```vue
-<template>
-  <div>test</div>
-  <button @click="count += 1">{{ count }}</button>
-</template>
-<script setup lang="ts">
-const count = ref(1);
+const { width, height } = useWindowSize();
 </script>
 <style scoped>
 div {
@@ -185,16 +192,106 @@ div {
 ```json
 {
   "imports": {
-    "ant-design-vue": "xxx"
+    "vue": "https://cdn.jsdelivr.net/npm/@vue/runtime-dom@3.5.18/dist/runtime-dom.esm-browser.js",
+    "vue/server-renderer": "https://cdn.jsdelivr.net/npm/@vue/server-renderer@3.5.18/dist/server-renderer.esm-browser.js",
+    "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs"
   },
-  "setting": {
-    "showCompileOutput": true
+  "autoResize": true,
+  "showCompileOutput": false,
+  "showSsrOutput": false,
+  "editorOptions": {
+    "autoSaveText": true,
+    "showErrorText": true,
+    "monacoOptions": {
+      "cursorBlinking": "solid"
+    }
   }
 }
 ```
 
 :::
 ````
+
+#### Multiple File Mode
+
+````markdown
+::: playground
+
+@file Comp.vue
+
+```vue
+<template>
+  <div>test @file</div>
+  <button @click="clickAdd">Click me {{ count }}</button>
+  <WindowSize></WindowSize>
+</template>
+<script setup>
+import WindowSize from "./WindowSize.vue";
+import { ref } from "vue";
+const count = ref(0);
+const clickAdd = () => {
+  count.value++;
+};
+</script>
+
+<style scoped>
+button {
+  color: red;
+}
+</style>
+```
+
+@file WindowSize.vue
+
+```vue
+<script setup lang="ts">
+import { useWindowSize } from "@vueuse/core";
+
+const { width, height } = useWindowSize();
+</script>
+
+<template>
+  <p>{{ width }} x {{ height }}</p>
+</template>
+```
+
+@setting
+
+```json
+{
+  "autoResize": true,
+  "showCompileOutput": false,
+  "showSsrOutput": false,
+  "editorOptions": {
+    "autoSaveText": true,
+    "showErrorText": true,
+    "monacoOptions": {
+      "cursorBlinking": "solid"
+    }
+  }
+}
+```
+
+@import
+
+```json
+{
+  "imports": {
+    "vue": "https://cdn.jsdelivr.net/npm/@vue/runtime-dom@3.5.18/dist/runtime-dom.esm-browser.js",
+    "vue/server-renderer": "https://cdn.jsdelivr.net/npm/@vue/server-renderer@3.5.18/dist/server-renderer.esm-browser.js",
+    "@vueuse/core": "https://unpkg.com/@vueuse/core/index.mjs"
+  }
+}
+```
+
+:::
+````
+
+## Config API
+
+| Field | description | type | default |
+|---|---|---|---|
+| theme | ||
 ## Contributors
 
 Thank you to everyone who contributed to this project.
