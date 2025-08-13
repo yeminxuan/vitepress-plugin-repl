@@ -1,5 +1,7 @@
 # vitepress-plugin-repl
 
+简体中文 | [English](README.en.md)
+
 <p align="center">
     <a href="https://www.npmjs.com/package/vitepress-plugin-repl" target="_black">
       <img src="https://img.shields.io/npm/v/vitepress-plugin-repl.svg?color=33A6B8&label="/>
@@ -195,11 +197,12 @@ div {
 ````
 ## 贡献者
 
-感谢为这个项目做出贡献的每一个人。
+感谢为这个项目做出贡献的每一个人
+
 <a href="https://github.com/yeminxuan/vitepress-plugin-repl/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=yeminxuan/vitepress-plugin-repl" />
 </a>
 
 ## 📄 许可证
 
-<p dir="auto"><a href="/vitepress-plugin-repl/blob/main/LICENSE">MIT</a> License Copyright (c) 2025 yeminxuan <a href="https://github.com/yeminxuan">yeminxuan</a></p>
+[MIT](./LICENSE) License Copyright (c) 2025 [yeminxuan](https://github.com/yeminxuan)

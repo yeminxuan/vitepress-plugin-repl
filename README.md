@@ -1,5 +1,7 @@
 # vitepress-plugin-repl
 
+[简体中文](README.zh.md) | English
+
 <p align="center">
     <a href="https://www.npmjs.com/package/vitepress-plugin-repl" target="_black">
       <img src="https://img.shields.io/npm/v/vitepress-plugin-repl.svg?color=33A6B8&label="/>
@@ -13,7 +15,7 @@
 
 </p>
 
-turns fenced code block in your VitePress docs into a live, editable playground—no build step, just add `::: playground`
+Turns fenced code block in your VitePress docs into a live, editable playground—no build step, just add `::: playground`
 
 ## 🚀 Features
 
@@ -196,10 +198,11 @@ div {
 ## Contributors
 
 Thank you to everyone who contributed to this project.
+
 <a href="https://github.com/yeminxuan/vitepress-plugin-repl/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=yeminxuan/vitepress-plugin-repl" />
 </a>
 
 ## 📄 License
 
-<p dir="auto"><a href="/vitepress-plugin-repl/blob/main/LICENSE">MIT</a> License Copyright (c) 2025 yeminxuan <a href="https://github.com/yeminxuan">yeminxuan</a></p>
+[MIT](./LICENSE) License Copyright (c) 2025 [yeminxuan](https://github.com/yeminxuan)
