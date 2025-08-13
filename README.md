@@ -289,9 +289,56 @@ const { width, height } = useWindowSize();
 
 ## Config API
 
-| Field | description | type | default |
+| Property | Description | Type | Default |
 |---|---|---|---|
-| theme | ||
+| theme | Set the overall theme | "dark" \| "light" | "light" |
+| previewTheme | Whether the preview pane follows the value of `theme` | Boolean | false |
+| autoResize | Whether the playground automatically resizes with the viewport | Boolean | true |
+| showCompileOutput | Whether to display the compiled code | Boolean | true |
+| showOpenSourceMap | Whether to show the “OPEN SourceMap” toggle | Boolean                         | false |
+| showImportMap | Whether to show the “Import Map” toggle | Boolean | true |
+| showSsrOutput     | Whether to display the SSR-compiled code | Boolean | false |
+| showTsConfig | Whether to show the “tsconfig.json” toggle | Boolean | false |
+| clearConsole | Whether to automatically clear the console after the project starts | Boolean | true |
+| layout | Layout direction | "horizontal" \| "vertical" | "horizontal" |
+| layoutReverse | Whether to reverse the layout | Boolean | false |
+| ssr | Whether to enable SSR | Boolean | false |
+| layoutReverse | Whether to reverse the layout | Boolean | false |
+| layoutReverse | Whether to reverse the layout | Boolean | false |
+| previewOptions | Preview pane options | [Object](#previewoptions-api) | () => ({})   |
+| editorOptions | Editor options | [Object](#editoroptions-api) | () => ({})   |
+| splitPaneOptions | Split-pane options | [Object](#splitpaneoptions-api) | () => ({}) |
+
+### PreviewOptions API
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| showRuntimeError | Whether to display runtime error messages | Boolean | true |
+| showRuntimeWarning | Whether to display runtime warning messages | Boolean | true |
+| headHTML | Raw HTML appended to `<head>` inside the preview `<iframe>`—useful for extra `<meta>`, `<link>`, third-party scripts, or styles | String | "" |
+| bodyHTML | Raw HTML inserted at the beginning of `<body>` inside the preview `<iframe>` | String | "" |
+| placeholderHTML | Raw HTML shown as a placeholder when the project hasn’t started (e.g., compile errors or empty project) | String | "" |
+| customCode | Extra code injected into the auto-generated entry file—usually for importing libraries or utilities | [Object](#customcode-api) | undefined |
+
+#### CustomCode API
+| Property | Description | Type   | Default |
+| --- | --- | --- | --- |
+| importCode | Code to insert at the top of the auto-generated entry file—commonly used to pre-import libraries or utilities | String | "" |
+| useCode | Code to run after `createApp()` but before `app.mount()`—used for registering plugins, global properties, router guards, etc. | String | "" |
+
+### EditorOptions API
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| showErrorText | Whether to show inline error text (hover tooltip) when there are compile-time errors (SFC syntax errors, TS type errors, etc.). Set to `false` to suppress. | String \| false | false |
+| autoSaveText  | Custom text displayed in the bottom-right auto-save toast (triggered on debounced input). | String | "" |
+| monacoOptions | [Monaco Editor initialization options](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IStandaloneEditorConstructionOptions.html#cursorBlinking) | any | undefined |
+
+### SplitPaneOptions API
+| Property | Description | Type   | Default |
+| --- | --- | --- | --- |
+| codeTogglerText | Text shown on the left (code pane) collapse/expand button | String | "" |
+| outputTogglerText | Text shown on the right (output pane) collapse/expand button | String | "" |
+
 ## Contributors
 
 Thank you to everyone who contributed to this project.

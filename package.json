@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "vitepress-plugin-repl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vitepress use playground, has react mode and vue mode",
   "module": "./dist/index.js",
   "main": "./dist/index.js",
