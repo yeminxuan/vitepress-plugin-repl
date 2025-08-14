@@ -1,61 +1,50 @@
-name: 🐛 Bug report
-description: Create a report to help us improve
-title: '[Bug]: '
+name: 🚀 Feature Request
+description: Suggest new feature advice or improvements
+title: '[Feat]: '
 body:
   - type: markdown
     attributes:
-      value: Thanks for taking the time to fill out this bug report!
+      value: Thanks for the feature suggestions, we will consider them carefully!
   - type: textarea
-    id: describe-the-bug
+    id: summary
     attributes:
-      label: Describe the bug
+      label: Introduction
+      description: Simple explain what this feature to solve the problem
+      placeholder: This feature will resolve...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What solution do you hope to see?
+      description: Describe clearly and concisely what you hope will happen.
+    validations:
+      required: true
+  - type: textarea
+    id: alternative
+    attributes:
+      label: What alternative solutions have you considered?
       description: >-
-        A clear and concise description of what the bug is. If you intend to
-        submit a PR for this issue, tell us in the description. Thanks!
-      placeholder: Bug description
-    validations:
-      required: true
+        Describe clearly and concisely any alternative solutions or features you
+        have considered.
   - type: textarea
-    id: reproduction
+    id: screenshot
     attributes:
-      label: Reproduction
-      description: 'Steps to reproduce the behavior. '
-      placeholder: Reproduction
-    validations:
-      required: true
+      label: Do you have any other context or screenshot?
+      description: >-
+        Add any other context or screenshots regarding the function request
+        here.
   - type: textarea
-    id: expected-behavior
+    id: systeminfo
     attributes:
-      label: Expected behavior
-      description: A clear and concise description of what you expected to happen.
-      placeholder: Expected behavior
-    validations:
-      required: true
-  - type: textarea
-    id: system-Info
-    attributes:
-      label: System Info
+      label: systemInfo
       placeholder: System, Binaries, Browsers
-    validations:
-      required: true
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional context
-      description: Add any other context or screenshots about the bug report here.
-      placeholder: Leave a comment
   - type: checkboxes
-    id: validations
+    id: contribute
     attributes:
-      label: Validations
-      description: Before submitting the issue, please make sure you do the following
+      label: Intention to contribute
       options:
         - label: >-
-            Check if you're on the <a
-            href="https://github.com/yeminxuan/vitepress-plugin-repl/releases/latest">vitepress-plugin-repl
-            latest</a> version
-          required: true
-        - label: >-
-            heck that there isn't already an issue that reports the same bug to
-            avoid creating a duplicate.
-          required: true
+            I'm interested in working on specific features and contributing back
+            to the upstream community
+          required: false

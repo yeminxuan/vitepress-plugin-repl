@@ -1,0 +1,61 @@
+name: 🐛 Bug report
+description: Create a report to help us improve
+title: '[Bug]: '
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: describe-the-bug
+    attributes:
+      label: Describe the bug
+      description: >-
+        A clear and concise description of what the bug is. If you intend to
+        submit a PR for this issue, tell us in the description. Thanks!
+      placeholder: Bug description
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: 'Steps to reproduce the behavior. '
+      placeholder: Reproduction
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      placeholder: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: system-Info
+    attributes:
+      label: System Info
+      placeholder: System, Binaries, Browsers
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add any other context or screenshots about the bug report here.
+      placeholder: Leave a comment
+  - type: checkboxes
+    id: validations
+    attributes:
+      label: Validations
+      description: Before submitting the issue, please make sure you do the following
+      options:
+        - label: >-
+            Check if you're on the <a
+            href="https://github.com/yeminxuan/vitepress-plugin-repl/releases/latest">vitepress-plugin-repl
+            latest</a> version
+          required: true
+        - label: >-
+            heck that there isn't already an issue that reports the same bug to
+            avoid creating a duplicate.
+          required: true
