@@ -1,17 +1,26 @@
-/*
- * @Author: 叶敏轩 mc20000406@163.com
- * @Date: 2025-08-12 10:58:33
- * @LastEditors: 叶敏轩 mc20000406@163.com
- * @LastEditTime: 2025-08-12 17:58:04
- * @FilePath: /vitepress-plugin-repl/vite.config.ts
- * @Description:
- */
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
-import dts from "vite-plugin-dts";
+import react from "@vitejs/plugin-react";
+import veauryVitePlugins from "veaury/vite";
+import reactReplConfig from "./repl-react/vite.config";
 export default defineConfig({
-  plugins: [vue(), dts(), cssInjectedByJsPlugin()],
+  ...reactReplConfig,
+  base: "./",
+  plugins: [
+    vue(),
+    react(),
+
+    veauryVitePlugins({
+      type: "vue",
+      include: ["*.tsx"],
+      // Configuration of @vitejs/plugin-vue
+      // vueOptions: {},
+      // // Configuration of @vitejs/plugin-react
+      // reactOptions: {},
+      // // Configuration of @vitejs/plugin-vue-jsx
+      // vueJsxOptions: {}
+    }),
+  ],
   build: {
     lib: {
       entry: "./node/index.ts",
@@ -22,6 +31,7 @@ export default defineConfig({
     rollupOptions: {
       external: [
         "vue",
+        "react",
         "@vue/repl",
         "vue/compiler-sfc",
         "vue-demi",

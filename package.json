@@ -12,7 +12,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "vue-tsc && vite build"
+    "build": "tsc && vite build"
   },
   "keywords": [],
   "author": "",
@@ -23,18 +23,27 @@
     "markdown-it-container": "4.0.0"
   },
   "peerDependencies": {
-    "vue": "3.5.13",
     "@vue/repl": "4.6.3",
-    "vitepress": "1.6.3"
+    "veaury": "2.6.3",
+    "vitepress": "1.6.3",
+    "vue": "3.5.13",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@swc/wasm-typescript-esm": "^1.10.1",
+    "@swc/wasm-web": "^1.10.1"
   },
   "devDependencies": {
     "@types/markdown-it": "^13.0.1",
     "@types/markdown-it-container": "^2.0.6",
+    "@vitejs/plugin-react": "^5.0.0",
     "@vitejs/plugin-vue": "^6.0.1",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
     "typescript": "^5.2.2",
+    "veaury": "2.6.3",
     "vite": "^7.1.2",
-    "vite-plugin-dts": "^4.5.4",
     "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^3.2.4",
     "vue-tsc": "^3.0.5"
   },
   "files": [
